@@ -15,12 +15,16 @@ public class bj2206 {
 		Queue<Crash> queue = new LinkedList<>();
 		int x[] = {0,-1,0,1};
 		int y[] = { -1,0,1,0 };
-
-		for (int a = 0; a < n; a++) {
-			for (int b = 0; b < m; b++) {
-				arr[a][b] = sc.nextInt();
-			}
+		for(int i=0;i<=m;i++){
+            String str = sc.next();
+            System.out.println(str);
+            char ch[]=str.toCharArray();
+            for(int j=0;j<ch.length;j++){
+                arr[i][j+1]=ch[j]-'0';
+            }
 		}
+		
+	
 		int count = 0;
 		queue.add(new Crash(0, 0, false));
 		check[0][0][1] = true;
@@ -55,7 +59,7 @@ public class bj2206 {
 				}
 			}
 		}
-		System.out.println(count);
+		System.out.println(success ? count : -1);
 	}
 }
 
