@@ -25,7 +25,7 @@ public class bj1931 {
 			Meeting m1 = q.poll();
 			if(m.last<=m1.start) {
 				m=m1;
-				max++
+				max++;
 			}
 		}
 		System.out.println(max);
