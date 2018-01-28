@@ -7,11 +7,12 @@ import java.util.Scanner;
 import java.util.Stack;
 
 public class bj2210 {
-
+	
 	static StringBuilder st = new StringBuilder();
 	static Map<String, Integer> map = new HashMap<>();
 	static int arr[][] = new int[7][7];
 	static int check[] = new int [7];
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 			Scanner sc = new Scanner(System.in);
@@ -29,6 +30,7 @@ public class bj2210 {
 			System.out.println(map.size());
 			
 	}
+	
 	static void dfs(int count,int a,int b) {
 		if(a<=0||b<=0||a>5||b>5) {
 			return;
@@ -43,6 +45,5 @@ public class bj2210 {
 		dfs(count,a-1,b);
 		dfs(count,a,b+1);
 		dfs(count,a,b-1);
-		
 	}
 }

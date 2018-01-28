@@ -9,30 +9,28 @@ import java.util.Collections;
 import java.util.Comparator;
 
 import java.util.PriorityQueue;
-
+import java.util.Scanner;
 import java.util.StringTokenizer;
 
 public class bj1202 {
 
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-		StringTokenizer st = new StringTokenizer(br.readLine().trim());
-		int n = Integer.parseInt(st.nextToken());
-		int m = Integer.parseInt(st.nextToken());
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int m = sc.nextInt();
 		long j[][] = new long[n][2];
 		long b[] = new long[m];
 
 		for (int a = 0; a < n; a++) {
-			st = new StringTokenizer(br.readLine().trim());
-			long w = Integer.parseInt(st.nextToken());
-			long c = Integer.parseInt(st.nextToken());
+			
+			long w = sc.nextInt();
+			long c = sc.nextInt();
 			j[a][0] = w;
 			j[a][1] = c;
 		}
 		for (int i = 0; i < m; i++) {
-			b[i] = Integer.parseInt(br.readLine().trim());
+			b[i] = sc.nextInt();
 		}
 
 		Comparator<long[]> comp = new Comparator<long[]>() {

@@ -15,10 +15,10 @@ public class bj1110 {
 			int k = a1/10;
 			int k1 = a1%10;
 			a1=(k1*10)+((k+k1)%10);
-			System.out.println(a1);
 			count++;
 		}
 		System.out.println(count);
 	}
+	
 
 }
