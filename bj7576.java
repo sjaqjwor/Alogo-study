@@ -19,7 +19,7 @@ public class bj7576 {
 		for (int a = 1; a <= y; a++) {
 			for (int b = 1; b <= x; b++) {
 				int number = sc.nextInt();
-				arr[a][b]=number;
+				arr[a][b] = number;
 				if (number == 1) {
 					st.push(new tomato(a, b));
 					count++;
@@ -27,17 +27,17 @@ public class bj7576 {
 
 			}
 		}
-//		for (int a = 1; a <= y; a++) {
-//			for (int b = 1; b <= x; b++) {
-//				System.out.print(arr[a][b]+" ");
-//
-//			}
-//			System.out.println();
-//		}
+		// for (int a = 1; a <= y; a++) {
+		// for (int b = 1; b <= x; b++) {
+		// System.out.print(arr[a][b]+" ");
+		//
+		// }
+		// System.out.println();
+		// }
 
-		if (st.isEmpty() && arr[1][1]==0) {
+		if (st.isEmpty() && arr[1][1] == 0) {
 			System.out.println(-1);
-		}else if(st.isEmpty() && arr[1][1]==-1) {
+		} else if (st.isEmpty() && arr[1][1] == -1) {
 			System.out.println(0);
 		} else if (count == x * y) {
 			System.out.println(0);
@@ -48,7 +48,7 @@ public class bj7576 {
 				check[t.y][t.x] = true;
 
 				if (t.x > 0 && t.y > 0 && t.x <= x && t.y <= y) {
-					if ((arr[t.y][t.x + 1] != -1 ) && !check[t.y][t.x + 1]) {
+					if ((arr[t.y][t.x + 1] != -1) && !check[t.y][t.x + 1]) {
 						arr[t.y][t.x + 1] = 1;
 						check[t.y][t.x + 1] = true;
 						if (t.x + 1 <= x) {
@@ -62,7 +62,7 @@ public class bj7576 {
 							st1.push(new tomato(t.y, t.x - 1));
 						}
 					}
-					if ((arr[t.y + 1][t.x] != -1 ) && !check[t.y + 1][t.x]) {
+					if ((arr[t.y + 1][t.x] != -1) && !check[t.y + 1][t.x]) {
 						arr[t.y + 1][t.x] = 1;
 						check[t.y + 1][t.x] = true;
 						if (t.y + 1 <= y) {
@@ -87,18 +87,17 @@ public class bj7576 {
 			int ch = 0;
 			for (int a = 1; a <= y; a++) {
 				for (int b = 1; b <= x; b++) {
-					if(check[a][b]==false && arr[a][b]!=-1) {
-						ch=1;
+					if (check[a][b] == false && arr[a][b] != -1) {
+						ch = 1;
 						break;
 					}
 				}
 			}
-			System.out.println(ch==1 ? -1 : count);
-
+			System.out.println(ch == 1 ? -1 : count);
+		}
 	}
+}
 
-}
-}
 class tomato {
 	int x;
 	int y;

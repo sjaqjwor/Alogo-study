@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class bj11403 {
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 			Scanner sc = new Scanner(System.in);
@@ -27,7 +26,7 @@ public class bj11403 {
 					}
 				}
 			}
-			
+
 			for(int a=0;a<nu;a++) {
 				for(int a1=0;a1<list[a].size();a1++) {
 					dfs(a,check,list,arr);
