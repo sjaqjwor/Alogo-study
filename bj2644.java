@@ -39,7 +39,7 @@ public class bj2644 {
 				queue.add((int) list[q].get(a));
 			}
 		}
-		System.out.println(dist[y]==0 ? -1 : dist[y]);
+		System.out.println(dist[y] == 0 ? -1 : dist[y]);
 
 	}
 
