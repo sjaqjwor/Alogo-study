@@ -16,7 +16,6 @@ public class bj7562 {
 		int dy[] = new int[] { 1, 1, -1, -1, 2, -2, 2, -2 };
 		for (int a = 0; a < num; a++) {
 			int l = sc.nextInt();
-			boolean ha = false;
 			boolean check[][] = new boolean[l][l];
 			Queue<chess> q = new LinkedList<>();
 			int x = sc.nextInt();
@@ -27,7 +26,7 @@ public class bj7562 {
 			chess end = new chess(x, y, 0);
 			q.add(st);
 			check[st.y][st.x] = true;
-			while (!q.isEmpty() && !ha) {
+			while (!q.isEmpty()) {
 				chess c = q.poll();
 				if (c.x == end.x && c.y == end.y) {
 					co = c.count;
