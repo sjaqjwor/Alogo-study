@@ -17,8 +17,7 @@ public class bj5502 {
 			reverse[b]=ch[a];
 			b++;
 		}
-		System.out.println(Arrays.toString(reverse));
-		System.out.println(Arrays.toString(ch));
+		
 		
 		int dist[][]= new int[num+1][num+1];
 		for(int a=1;a<=num;a++) {

@@ -32,9 +32,11 @@ public class bj9633 {
 	}
 	static boolean check(int arr[],int num) {
 		for(int b=1;b<num;b++) {
+			//같은 행 , 열 확인
 			if(arr[b]==arr[num]) {
 				return false;
 			}
+			//대각선 확인
 			if(Math.abs(arr[b]-arr[num])==Math.abs(b-num)) {
 				return false;
 			};

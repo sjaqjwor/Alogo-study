@@ -1,11 +1,13 @@
 package baeckjoon;
 
+import java.util.Optional;
 import java.util.Scanner;
 
 public class bj9465 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		Optional.ofNullable("aasd").ifPresent(s->{System.out.println(s+" "+"asdasd");});
 		Scanner sc = new Scanner(System.in);
 		int count = sc.nextInt();
 		for (int c = 0; c < count; c++) {
