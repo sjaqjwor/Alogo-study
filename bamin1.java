@@ -8,6 +8,7 @@ public class bamin1 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+	
 		Stack<String> st = new Stack();
 		Scanner sc = new Scanner(System.in);
 		String s = sc.nextLine();
