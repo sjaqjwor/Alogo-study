@@ -1,10 +1,10 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class KakaoTest1 {
 
     public static void main(String[] args) {
         String[] record = {"Enter uid1234 Muzi", "Enter uid4567 Prodo","Leave uid1234","Enter uid1234 Prodo","Change uid4567 Ryan"};
+        LinkedList<String> list = new LinkedList<>();
         solution(record);
     }
     static String[] solution(String[] record){
@@ -29,8 +29,8 @@ public class KakaoTest1 {
                 st.append(map.get(temp[1])+"님이 나갔습니다.").append("\n");
             }
         }
+        String []str = st.toString().split("\n");
 
-        System.out.print(st.toString());
-        return null;
+        return str;
     }
 }

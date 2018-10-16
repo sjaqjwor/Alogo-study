@@ -3,7 +3,8 @@ import java.util.*;
 public class KakaoTest02 {
 
     public static void main(String[] args) {
-        solution(5,new int[]{2, 1, 2, 6, 2, 4, 3, 3});
+        solution(5,new int[]{4,4,4,4,4});
+
     }
     static int[] solution(int N , int stages[]){
         Map<Integer , Integer> map = new HashMap<>();
@@ -29,11 +30,15 @@ public class KakaoTest02 {
             }
 
         }
-        list.forEach(s -> System.out.println(s.stage+" "+s.point));
         Collections.sort(list);
-        System.out.println();
-        list.forEach(s -> System.out.println(s.stage+" "+s.point));
-        return null;
+        int answer [] = new int[list.size()];
+        int a=0;
+        for(Fail f : list){
+            answer[a]=f.stage;
+            a++;
+        }
+
+        return answer;
     }
 }
 class Fail implements Comparable<Fail>{
@@ -48,8 +53,10 @@ class Fail implements Comparable<Fail>{
     public int compareTo(Fail o) {
         if(this.point>o.point){
             return -1;
-        }else{
+        }else if(this.point<o.point){
             return 1;
+        }else{
+            return 0;
         }
     }
 }
