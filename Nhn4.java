@@ -9,7 +9,8 @@ public class Nhn4 {
 
 
         String arr[][] = new String[n][n];
-        boolean check[][] = new boolean[n][n];
+        String an[][] = new String[n][n];
+        int check[][] = new int[n][n];
         int dx[] = new int[]{1,-1,0,0};
         int dy[] = new int[]{0,0,1,-1};
         Queue<Country> queue = new LinkedList<>();
@@ -22,12 +23,13 @@ public class Nhn4 {
                 String str = sc.next();
                 if(str.matches("[A-Za-z]")){
                     queue.add(new Country(b,a,str));
-                    check[a][b]=true;
+                    check[a][b]=1;
                 }
                 arr[a][b]=str;
+                an[a][b]=str;
             }
         }
-        int count=0;
+        int count=1;
         while (!queue.isEmpty()){
             Country country = queue.poll();
             for(int a=0;a<4;a++){
@@ -37,9 +39,9 @@ public class Nhn4 {
                         arr[tempy][tempx].matches("[^a-zA-Z]{1,2}")
                        ){
                             if(checkWall(tempx,tempy,arr,country.x,country.y)) {
-                                String k = check(arr, tempx, tempy);
+                                String k = check(arr, tempx, tempy,check,count);
                                 arr[tempy][tempx] = k;
-
+                                check[tempy][tempx]=count+1;
                                 if (!k.equals("0")) {
                                     temp.add(new Country(tempx, tempy, k));
                                 }
@@ -47,20 +49,14 @@ public class Nhn4 {
                 }
             }
             if(queue.isEmpty()){
-                for(int a=0;a<n;a++){
-                    for(int b=0;b<n;b++){
-                        System.out.print(arr[a][b]+" ");
-                    }
-                    System.out.println();
-                }
-                System.out.println();
+
                 count++;
                 queue.addAll(temp);
                 temp.clear();
             }
         }
 
-        System.out.print(count-1);
+        System.out.print(count-2);
         System.out.println();
         for(int a=0;a<n;a++){
             for(int b=0;b<n;b++){
@@ -71,7 +67,7 @@ public class Nhn4 {
 
 
     }
-    static String check(String [][] str,int x, int y){
+    static String check(String [][] str,int x, int y,int check[][],int count){
         Map<String , Integer> map = new HashMap<>();
 
         int dx[] = new int[]{0,0,-1,1};
@@ -82,7 +78,7 @@ public class Nhn4 {
             int tempy = dy[a]+y;
 
             if(tempx>=0 && tempx < str.length && tempy>=0 && tempy < str.length && str[tempy][tempx].matches("[a-zA-z]{1,2}")){
-                if(checkWall(x,y,str,tempx,tempy)){
+                if(checkWall(x,y,str,tempx,tempy) && check[tempy][tempx]<=count){
                     map.merge(str[tempy][tempx],1,Integer::sum);
                 }
 
@@ -96,13 +92,13 @@ public class Nhn4 {
                 an=e.getKey();
             }
         };
-        int count = 0 ;
+        int count1 = 0 ;
         for(Map.Entry<String,Integer> e : map.entrySet()){
             if(e.getValue()==max){
-                count++;
+                count1++;
             }
         };
-        if(count>1){
+        if(count1>1){
             return str[y][x];
         }else{
             return an;
