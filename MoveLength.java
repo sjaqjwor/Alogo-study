@@ -12,43 +12,38 @@ public class MoveLength {
 
    static int solution(String dirs) {
 
-        Map<MovePoint,Integer> setx = new HashMap<>();
+        HashSet<String> set = new HashSet<>();
         int x=0;
         int y=0;
-        setx.put(new MovePoint(x,y),1);
+
+        StringBuilder st = new StringBuilder();
         int count=0;
+        st.append(0).append(0).append(" ");
         for(int a=0;a<dirs.length();a++){
             char move = dirs.charAt(a);
 
                 if (move == 'U' && y < 5) {
                     y += 1;
-                    if(!setx.containsKey(new MovePoint(x,y))){
-                        count++;
-                    }
-                    setx.put(new MovePoint(x,y),1);
+                    st.append(x).append(y).append(" ");
                 } else if (move == 'D' && y > -5) {
                     y -= 1;
-
-                    if(!setx.containsKey(new MovePoint(x,y))){
-                        count++;
-                    }
-                    setx.put(new MovePoint(x,y),1);
+                    st.append(x).append(y).append(" ");
                 } else if (move == 'R' && x < 5) {
                     x += 1;
-                    if(!setx.containsKey(new MovePoint(x,y))){
-                        count++;
-                    }
-                    setx.put(new MovePoint(x,y),1);
+                    st.append(x).append(y).append(" ");
                 } else if (move == 'L' && x > -5) {
                     x -= 1;
-                    if(!setx.containsKey(new MovePoint(x,y))){
-                        count++;
-                    }
-                    setx.put(new MovePoint(x,y),1);
+                    st.append(x).append(y).append(" ");
                 }
 
+        }
+        String str[] = st.toString().split(" ");
 
-
+        for(int a=0;a<str.length-1;a++){
+            if(!set.contains(str[a]) || !set.contains(str[a+1])){
+                count++;
+                set.add(str[a]);
+            }
         }
 
         return count;
