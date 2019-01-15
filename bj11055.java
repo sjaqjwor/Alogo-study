@@ -1,9 +1,15 @@
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class bj11055 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
+        List<String> list = new ArrayList<>();
+        list.forEach(s -> System.out.print(s));
+
 
         int n = sc.nextInt();
 
