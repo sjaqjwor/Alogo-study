@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Coupang1 {
+public class MakeWord {
     public static void main(String[] args)  throws Exception{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String line = br.readLine();
