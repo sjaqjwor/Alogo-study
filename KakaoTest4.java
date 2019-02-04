@@ -30,7 +30,6 @@ public class KakaoTest4 {
                    }
                    if(food_times[stage]-1>=0){
                        food_times[stage]=food_times[stage]-1;
-
                        stage++;
                        break;
                    }
@@ -52,7 +51,7 @@ public class KakaoTest4 {
         }
         int num=0;
         long count=0;
-        while (count<k){
+        while (!queue.isEmpty() && count<k){
             num = queue.poll();
             if(food_times[num-1]-1>0){
                 queue.add(num);
