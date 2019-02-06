@@ -1,7 +1,7 @@
 public class Exam2 {
 
     public static void main(String[] args) {
-        solution(99999);
+        solution(5000);
     }
     static  String solution(int num) {
         String number[] = new String[]{"","일","이","삼","사","오","육","칠","팔","구"};

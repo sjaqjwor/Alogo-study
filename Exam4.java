@@ -23,11 +23,11 @@ public class Exam4 {
     static long solution2(long k){
         long sum=1;
         long num=1;
-
-        while(num<=k) {
+        do{
             num += sum;
             sum++;
-        }
+        }while (num<=k);
+
         sum=sum-1;
         num-=sum;
         return (k-num)+1;
