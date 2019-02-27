@@ -9,6 +9,7 @@ public class Necklaces {
 //        System.out.println(solution(new int[]{1,0}));
           System.out.println(solution(new int[]{0}));
         System.out.println(solution(new int[]{5,4,0,3,1,6,2}));
+
     }
     static int solution(int[] A) {
         if(A.length==0){

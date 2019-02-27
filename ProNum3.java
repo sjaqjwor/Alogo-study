@@ -3,7 +3,11 @@ import java.util.*;
 public class ProNum3 {
 
     public static void main(String[] args) {
-        solution(new int[]{1,1,1},new int[][]{{100, 3000}, {150, 70}, {160, 80}});
+       int arr[] = solution(new int[]{1,1,1},new int[][]{{100, 3000}, {150, 70}, {160, 80}});
+
+       for(int k : arr){
+           System.out.println(k);
+       }
     }
     static  int[] solution(int[] healths, int[][] items) {
         Arrays.sort(healths);

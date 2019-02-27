@@ -1,3 +1,4 @@
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -11,6 +12,8 @@ public class Checker {
         System.out.println(solution(new String[]{"...","..X",".O."}));
         System.out.println(solution(new String[]{"...",".X.",".O."}));
         System.out.println(solution(new String[]{"O..",".X.","..."}));
+
+        
     }
 
     static int solution(String[] B) {
