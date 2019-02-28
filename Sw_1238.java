@@ -8,8 +8,41 @@ public class Sw_1238 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int testSize = Integer.parseInt(br.readLine());
+        for(int a=1;a<=testSize;a++) {
+            StringBuilder sb = new StringBuilder();
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            int size = Integer.parseInt(st.nextToken());
+            int arr[][] = new int [size+1][size+1];
+            for(int b=1;b<=size;b++) {
+                for (int c = 1; c <= size; c++) {
+                    arr[b][c] = Integer.parseInt(st.nextToken());
+                    if (b != c && arr[b][c] == 0) arr[b][c] = Integer.MAX_VALUE >> 1;
+                }
+            }
+            for(int b=1;b<=size;b++) {
+                for (int c = 1; c <= size; c++) {
+                    for (int d = 1; d <= size; d++) {
+                        arr[c][d]=Math.min(arr[c][d],arr[c][b]+arr[b][d]);
+                    }
+                }
+            }
 
+            int result=0;
+            int max=Integer.MAX_VALUE;
+            for(int b=1;b<=size ;b++){
+                result=0;
+                for(int c=1;c<=size;c++){
+                 result+=arr[b][c];
+                }
+                max=Math.min(max,result);
+            }
 
+            sb.append("#").append(a).append(" ").append(max);
+            System.out.println(sb.toString());
+
+        }
+
+/**
         for(int a=1;a<=testSize;a++){
             StringBuilder sb = new StringBuilder();
             StringTokenizer st = new StringTokenizer(br.readLine());
@@ -70,5 +103,6 @@ public class Sw_1238 {
             sb.append("#").append(a).append(" ").append(max);
             System.out.println(sb.toString());
         }
+        **/
     }
 }
